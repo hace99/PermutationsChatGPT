@@ -101,4 +101,22 @@ class PermutationsTest {
             assertTrue(result.contains(expected));
         }
     }
+    @Test
+    public void twoEqualsAndOneDifferentValue2() {
+        Permutations permutations = new Permutations();
+        int[] nums = {1, 1, -2};
+        List<List<Integer>> result = permutations.permute(nums);
+
+        assertEquals(6, result.size());
+
+        List<List<Integer>> expectedPermutations = Arrays.asList(
+                Arrays.asList(1, -2, 1),
+                Arrays.asList(1, 1, -2),
+                Arrays.asList(-2, 1, 1)
+        );
+
+        for (List<Integer> expected : expectedPermutations) {
+            assertTrue(result.contains(expected));
+        }
+    }
 }
